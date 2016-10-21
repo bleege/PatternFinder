@@ -15,6 +15,10 @@ public class PatternFinderTest {
         assertNotNull(patternFinder);
         assertTrue(patternFinder.doesWordMatchPattern("a3e", "apple"));
         assertFalse(patternFinder.doesWordMatchPattern("a3e", "apples"));
+        assertTrue(patternFinder.doesWordMatchPattern("3r", "pear"));
+        assertFalse(patternFinder.doesWordMatchPattern("3r", "pears"));
+        assertTrue(patternFinder.doesWordMatchPattern("ban3", "banana"));
+        assertFalse(patternFinder.doesWordMatchPattern("ban3", "bananas"));
+        assertFalse(patternFinder.doesWordMatchPattern("ban", "banana"));
     }
-
 }
