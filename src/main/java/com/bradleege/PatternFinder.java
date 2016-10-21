@@ -10,11 +10,11 @@ public class PatternFinder {
 
     public boolean doesWordMatchPattern(String pattern, String word) {
 
-        HashMap<Integer, Object> patternChars = new HashMap<Integer, Object>();
+        HashMap<Integer, Character> patternChars = new HashMap<Integer, Character>();
         int lengthOfPattern = 0;
         for (int lc = 0; lc < pattern.length(); lc++) {
             char c = pattern.charAt(lc);
-            patternChars.put(lc, c);
+            patternChars.put(lengthOfPattern, c);
             if (isCharADigit(c)) {
                 lengthOfPattern = lengthOfPattern + Character.getNumericValue(c);
             } else {
@@ -28,7 +28,7 @@ public class PatternFinder {
 
         for (int lc = 0; lc < word.length(); lc++) {
             if (patternChars.containsKey(lc)) {
-                char c = pattern.charAt(lc);
+                char c = patternChars.get(lc);
                 // Test for Integer
                 if (isCharADigit(c)) {
 
